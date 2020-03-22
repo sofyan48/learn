@@ -12,7 +12,11 @@ fn main() {
     println!("{}", gives);
 
     let take_gives = takes_gives_ownership(gives);
-    println!("{}", take_gives)
+    println!("{}", take_gives);
+
+    let clen = String::from("hello");
+    let (result, len) = calculate_length(clen);
+    println!("The length of '{}' is {}.", result, len);
 
 } 
 
@@ -36,4 +40,10 @@ fn gives_ownership() -> String {
 
 fn takes_gives_ownership(some_string: String) -> String { 
     some_string 
+}
+
+fn calculate_length(s: String) -> (String, usize) {
+    let length = s.len(); // len() returns the length of a String
+
+    (s, length)
 }
