@@ -11,6 +11,9 @@ fn main() {
     let gives = gives_ownership();
     println!("{}", gives);
 
+    let take_gives = takes_gives_ownership(gives);
+    println!("{}", take_gives)
+
 } 
 
 fn takes_ownership(some_string: String) {
@@ -28,5 +31,9 @@ fn return_name(some_nname: &str) -> &str {
 
 fn gives_ownership() -> String { 
     let some_string = String::from("iank");
+    some_string 
+}
+
+fn takes_gives_ownership(some_string: String) -> String { 
     some_string 
 }
