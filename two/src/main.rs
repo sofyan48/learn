@@ -8,6 +8,9 @@ fn main() {
     let s_name = return_name(name);
     println!("{}",s_name);
 
+    let gives = gives_ownership();
+    println!("{}", gives);
+
 } 
 
 fn takes_ownership(some_string: String) {
@@ -20,4 +23,10 @@ fn makes_copy(some_integer: i32) {
 
 fn return_name(some_nname: &str) -> &str {
     return some_nname;
+}
+
+
+fn gives_ownership() -> String { 
+    let some_string = String::from("iank");
+    some_string 
 }
